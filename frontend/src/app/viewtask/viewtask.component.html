@@ -1,0 +1,15 @@
+<div class="container">
+<h1>{{ task.taskName}} </h1>
+ <h4><a [routerLink]="['/taskmanager']">Go Back</a></h4>
+<dl class="list">
+ <dt>Priority</dt>
+ <dd>{{ task.priority }}</dd>
+ <dt>Parent</dt>
+ <dd>{{ task.parentTaskName }}</dd>
+ <dt>Start Date</dt>
+ <dd><time>{{ task.startDate | amDateFormat: 'YYYY-MM-DD' }}</time></dd>
+ <dt>End Date</dt>
+ <dd><time>{{ task.endDate  | amDateFormat: 'YYYY-MM-DD' }}</time></dd>
+
+</dl>
+</div>

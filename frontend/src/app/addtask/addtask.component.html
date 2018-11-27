@@ -1,0 +1,33 @@
+<div class="container">
+  <h1>Add Task</h1>
+  <h4><a [routerLink]="['/taskmanager']">Go Back</a></h4>
+  <div class="row">
+    <div class="col-md-6">
+      <form  #addTaskForm="ngForm">
+        <div class="form-group">
+          <label for="name">Task</label>
+          <input type="text" class="form-control" [(ngModel)]="task.taskName" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="priority">Priority</label><br/>
+		  0<input type="range" [(ngModel)]="task.priority" min="0" max="100" data-show-value="true" name="priority" required="true"/>100
+        </div>
+      
+        <div class="form-group">
+          <label for="startDate">Start Date</label>
+          <input type="date" class="form-control" [(ngModel)]="task.startDate" name="startDate" required>
+        </div>
+		
+		<div class="form-group">
+		 <label for="parentTask">Parent</label>
+		  <input type="text" class="form-control" [(ngModel)]="task.parentTaskName" name="parentTask">
+		</div>
+       
+        <div class="form-group">
+          <button type="submit" class="btn btn-success" [disabled]="!addTaskForm.form.valid" (click) ="saveTask()">Save</button>
+		  <button type="reset" class="btn btn-success" [disabled]="!addTaskForm.form.valid" (click) ="resetTask(addTaskForm)">Reset</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

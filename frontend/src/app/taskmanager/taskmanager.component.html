@@ -1,0 +1,72 @@
+<div class="container">
+  <h1>Task Manager</h1>
+  <h4><a [routerLink]="['/addtask']">Add Task</a></h4>
+   
+<form  #taskSearch="ngForm">
+<table class="table" >
+   <tr>
+   <div class="form-group">
+      <td><label for="name">Task : </label>
+          <input type="text" [(ngModel)]="searchTask.taskName" name="name" size="45"></td>
+      <td><label for="priority">Parent Task:</label>
+		  <input type="text" [(ngModel)]="searchTask.parentTaskName" name="parentTaskName" size="45"/></td>
+    </div>
+   </tr>
+   <tr>
+    <div class="form-group">
+      <td><label for="name">Priority From : </label>
+          <input type="text" [(ngModel)]="searchTask.priorityFrom" name="priorityFrom" size="10">
+      <label for="priority">Priority To:</label>
+		  <input type="text" [(ngModel)]="searchTask.priorityTo" name="priorityTo" size="10"/>
+      </td>
+      <td>
+         <label for="startDate">Start Date</label>
+          <input type="date" [(ngModel)]="searchTask.startDate" name="startDate">
+          <label for="endDate">End Date</label>
+          <input type="date"  [(ngModel)]="searchTask.endDate" name="endDate">
+      </td>
+    </div>
+   </tr>
+   <tr>
+     <td>
+       <div>
+         <button type="submit" class="btn btn-success"  (click) ="searchTaskDetails()">Search</button>
+         <button type="submit" class="btn btn-success"  (click) ="clearsearchDetails()">Clear</button>
+       </div>
+      </td>
+   </tr>
+  </table>
+  </form>
+ <form  #taskManager="ngForm">
+  <table class="table" >
+    <thead>
+      <tr>
+        <th>Task</th>
+        <th>Parent Task</th>
+		 <th>Priority</th>
+        <th>Start Date</th>
+		<th>End Date</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of tasks">
+        <td>{{ task.taskName }}</td>
+       <td>{{ task.parentTaskName }}</td>
+        <td>{{ task.priority }}</td>
+		<td><time>{{ task.startDate | amDateFormat: 'YYYY-MM-DD' }}</time></td>
+		<td><time>{{ task.endDate  | amDateFormat: 'YYYY-MM-DD' }}</time></td>
+        <td>
+		<div *ngIf="task.endDate == null">
+		   <a [routerLink]="['/edittask',task.id]" class="btn btn-success">EDIT</a>
+		   <button type="submit" class="btn btn-success" (click)="endTask(task.id)">End Task</button>
+    	</div>
+        <div *ngIf="task.endDate != null">
+		<a [routerLink]="['/viewtask',task.id]" class="btn btn-success">View</a>
+       </div>
+		</td>
+      </tr>
+    </tbody>
+  </table>
+  </form>
+</div>
