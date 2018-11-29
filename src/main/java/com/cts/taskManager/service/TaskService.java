@@ -5,7 +5,7 @@ import com.cts.taskManager.model.Task;
 
 public interface TaskService {
 	
-	List<Task> finAllTasks();
+	List<Task> findAllTasks();
 	
 	Task saveTask(Task task);
 	

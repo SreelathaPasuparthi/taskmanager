@@ -19,8 +19,8 @@ public class TaskController {
 	
 	@RequestMapping(method=RequestMethod.GET, value="/tasks")
 	@ResponseBody
-	public List<Task> task(){
-		return taskService.finAllTasks();
+	public List<Task> findAllTasks(){
+		return taskService.findAllTasks();
 	}
 	
 	@RequestMapping(method=RequestMethod.POST, value="/tasks")
