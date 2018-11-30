@@ -7,9 +7,9 @@
  <dt>Parent</dt>
  <dd>{{ task.parentTaskName }}</dd>
  <dt>Start Date</dt>
- <dd><time>{{ task.startDate | amDateFormat: 'YYYY-MM-DD' }}</time></dd>
+ <dd> <div *ngIf="task?.startDate != null"><time>{{ task.startDate | amDateFormat: 'YYYY-MM-DD' }}</time></div></dd>
  <dt>End Date</dt>
- <dd><time>{{ task.endDate  | amDateFormat: 'YYYY-MM-DD' }}</time></dd>
+ <dd><div *ngIf="task?.endDate != null"><time>{{ task.endDate  | amDateFormat: 'YYYY-MM-DD' }}</time></div></dd>
 
 </dl>
 </div>
