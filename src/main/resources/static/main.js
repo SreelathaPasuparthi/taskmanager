@@ -791,7 +791,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\" *ngIf=\"task != null\">\r\n<h4><a [routerLink]=\"['/taskmanager']\">Go Back</a></h4>\r\n <table class=\"table\" >\r\n    <tr>\r\n\t   <td>TaskName : </td>\r\n\t   <td>{{ task.taskName}}</td>\r\n\t</tr>\r\n    <tr>\r\n\t   <td>Priority</td>\r\n\t   <td>{{ task.priority }}</td>\r\n\t</tr>\r\n    <tr>\r\n\t   <td>Parent</td>\r\n\t   <td>{{ task.parentTaskName }}</td>\r\n\t </tr>    \r\n     <tr>\r\n\t   <div *ngIf=\"task?.startDate != null\">\r\n\t     <td>Start Date</td>\r\n\t     <td><time>{{ task.startDate | amDateFormat: 'YYYY-MM-DD' }}</time></td>\r\n\t   </div>\r\n\t </tr>\r\n     <tr>\r\n\t   <div *ngIf=\"task?.endDate != null\">\r\n\t     <td>End Date</td>\r\n\t\t <td><time>{{ task.endDate  | amDateFormat: 'YYYY-MM-DD' }}</time></td>\r\n\t\t</div> \r\n\t </tr>\r\n \r\n  </table>\r\n </div>"
+module.exports = "<div class=\"container\">\r\n<h1>{{ task.taskName}} </h1>\r\n <h4><a [routerLink]=\"['/taskmanager']\">Go Back</a></h4>\r\n<dl class=\"list\">\r\n <dt>Priority</dt>\r\n <dd>{{ task.priority }}</dd>\r\n <dt>Parent</dt>\r\n <dd>{{ task.parentTaskName }}</dd>\r\n <dt>Start Date</dt>\r\n <dd> <div *ngIf=\"task?.startDate != null\"><time>{{ task.startDate | amDateFormat: 'YYYY-MM-DD' }}</time></div></dd>\r\n <dt>End Date</dt>\r\n <dd><div *ngIf=\"task?.endDate != null\"><time>{{ task.endDate  | amDateFormat: 'YYYY-MM-DD' }}</time></div></dd>\r\n\r\n</dl>\r\n</div>"
 
 /***/ }),
 
