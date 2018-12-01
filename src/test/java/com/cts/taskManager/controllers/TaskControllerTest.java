@@ -42,13 +42,13 @@ public class TaskControllerTest{
 	@Test
 	public void verifysaveTask() throws Exception {
 		mockMvc.perform(MockMvcRequestBuilders.post("/tasks").contentType(MediaType.APPLICATION_JSON)
-				.content("{\"taskName\" : \"Task1\",\"priority\" : 10}").accept(MediaType.APPLICATION_JSON))
+				.content("{\"taskName\" : \"TaskTest\",\"priority\" : 10,\"startDate\":\"2018-11-29T00:00:00.000+0000\"}").accept(MediaType.APPLICATION_JSON))
 				.andExpect(jsonPath("$.id").exists()).andExpect(jsonPath("$.taskName").exists());
 	}
 	
 	@Test
 	public void verifyTaskById() throws Exception {
-		mockMvc.perform(MockMvcRequestBuilders.get("/tasks/5bf957c0f657d811a000399f").
+		mockMvc.perform(MockMvcRequestBuilders.get("/tasks/5c008ad7f657d80d7084ab1e").
 				accept(MediaType.APPLICATION_JSON)).
 		andExpect(jsonPath("$.id").exists());
 	}
