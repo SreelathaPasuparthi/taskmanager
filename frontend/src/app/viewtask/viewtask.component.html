@@ -1,6 +1,13 @@
 <div class="container" *ngIf="task != null">
-<h1>{{ task.taskName}} </h1>
- <h4><a [routerLink]="['/taskmanager']">Go Back</a></h4>
+<table>
+      <tr>
+	    <td><h1>{{ task.taskName}}</h1></td>
+		<td><h3>( </h3></td>
+		<td><h3><a [routerLink]="['/taskmanager']">Go Back</a></h3></td>
+		<td><h3> ) </h3></td>
+	  </tr>
+  </table> 
+
 <dl class="list">
  <dt>Priority</dt>
  <dd>{{ task.priority }}</dd>

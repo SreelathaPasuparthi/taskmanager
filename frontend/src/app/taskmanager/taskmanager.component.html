@@ -1,28 +1,33 @@
 <div class="container">
-  <h1>Task Manager</h1>
-  <h4><a [routerLink]="['/addtask']">Add Task</a></h4>
-   
+  <table>
+      <tr>
+	    <td><h1>Task Manager</h1></td>
+		<td><h3>( </h3></td>
+		<td><h3><a [routerLink]="['/addtask']">Add Task</a></h3></td>
+		<td><h3> ) </h3></td>
+	  </tr>
+  </table>
 <form  #taskSearch="ngForm">
 <table class="table" >
    <tr>
    <div class="form-group">
-      <td><label for="name">Task : </label>
-          <input type="text" [(ngModel)]="searchTask.taskName" name="name" size="45"></td>
-      <td><label for="priority">Parent Task:</label>
-		  <input type="text" [(ngModel)]="searchTask.parentTaskName" name="parentTaskName" size="45"/></td>
+      <td><label for="name">Task : </label>&nbsp;
+          <input type="text" [(ngModel)]="searchTask.taskName" name="name" size="45">&nbsp;</td>
+      <td><label for="priority">Parent Task: </label>&nbsp;
+		  <input type="text" [(ngModel)]="searchTask.parentTaskName" name="parentTaskName" size="45"/>&nbsp;</td>
     </div>
    </tr>
    <tr>
     <div class="form-group">
-      <td><label for="name">Priority From : </label>
-          <input type="text" [(ngModel)]="searchTask.priorityFrom" name="priorityFrom" size="10">
-      <label for="priority">Priority To:</label>
-		  <input type="text" [(ngModel)]="searchTask.priorityTo" name="priorityTo" size="10"/>
+      <td><label for="name">Priority From : </label>&nbsp;
+          <input type="text" [(ngModel)]="searchTask.priorityFrom" name="priorityFrom" size="10"/>&nbsp;
+      <label for="priority">Priority To:</label>&nbsp;
+		  <input type="text" [(ngModel)]="searchTask.priorityTo" name="priorityTo" size="10"/>&nbsp;
       </td>
       <td>
-         <label for="startDate">Start Date</label>
-          <input type="date" [(ngModel)]="searchTask.startDate" name="startDate">
-          <label for="endDate">End Date</label>
+         <label for="startDate">Start Date </label>&nbsp;
+          <input type="date" [(ngModel)]="searchTask.startDate" name="startDate"/>&nbsp;
+          <label for="endDate">End Date </label>&nbsp;
           <input type="date"  [(ngModel)]="searchTask.endDate" name="endDate">
       </td>
     </div>
