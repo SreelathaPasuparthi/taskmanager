@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute , Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { DatePipe} from '@angular/common';
 
@@ -13,7 +13,7 @@ export class ViewtaskComponent implements OnInit {
 	
   task = {};	
 
-  constructor(private route : ActivatedRoute , private http: HttpClient,private datePipe : DatePipe) { }
+  constructor(private http: HttpClient, private route : ActivatedRoute , private datePipe : DatePipe) { }
 
   ngOnInit() {
 	  this.getTaskDetail(this.route.snapshot.params['id']);

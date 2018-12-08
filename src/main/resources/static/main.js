@@ -791,7 +791,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\" *ngIf=\"task != null\">\r\n<table>\r\n      <tr>\r\n\t    <td><h1>{{ task.taskName}}</h1></td>\r\n\t\t<td><h3>( </h3></td>\r\n\t\t<td><h3><a [routerLink]=\"['/taskmanager']\">Go Back</a></h3></td>\r\n\t\t<td><h3> ) </h3></td>\r\n\t  </tr>\r\n  </table> \r\n\r\n<dl class=\"list\">\r\n <dt>Priority</dt>\r\n <dd>{{ task.priority }}</dd>\r\n <dt>Parent</dt>\r\n <dd>{{ task.parentTaskName }}</dd>\r\n <dt>Start Date</dt>\r\n <dd> <div *ngIf=\"task?.startDate != null\"><time>{{ task.startDate | amDateFormat: 'YYYY-MM-DD' }}</time></div></dd>\r\n <dt>End Date</dt>\r\n <dd><div *ngIf=\"task?.endDate != null\"><time>{{ task.endDate  | amDateFormat: 'YYYY-MM-DD' }}</time></div></dd>\r\n\r\n</dl>\r\n</div>"
+module.exports = "<div class=\"container\">\r\n<div  *ngIf=\"task != null\">\r\n<table>\r\n      <tr>\r\n\t    <td><h1>{{ task.taskName}}</h1></td>\r\n\t\t<td><h3>( </h3></td>\r\n\t\t<td><h3><a [routerLink]=\"['/taskmanager']\">Go Back</a></h3></td>\r\n\t\t<td><h3> ) </h3></td>\r\n\t  </tr>\r\n  </table> \r\n\r\n<dl class=\"list\">\r\n <dt>Priority</dt>\r\n <dd><div *ngIf=\"task?.priority != null\">{{ task.priority }}</div></dd>\r\n <dt>Parent</dt>\r\n <dd><div *ngIf=\"task?.parentTaskName != null\">{{ task.parentTaskName }}</div></dd>\r\n <dt>Start Date</dt>\r\n <dd> <div *ngIf=\"task?.startDate != null\"><time>{{ task.startDate | amDateFormat: 'YYYY-MM-DD' }}</time></div></dd>\r\n <dt>End Date</dt>\r\n <dd><div *ngIf=\"task?.endDate != null\"><time>{{ task.endDate  | amDateFormat: 'YYYY-MM-DD' }}</time></div></dd>\r\n\r\n</dl>\r\n</div>\r\n</div>"
 
 /***/ }),
 
@@ -823,9 +823,9 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 var ViewtaskComponent = /** @class */ (function () {
-    function ViewtaskComponent(route, http, datePipe) {
-        this.route = route;
+    function ViewtaskComponent(http, route, datePipe) {
         this.http = http;
+        this.route = route;
         this.datePipe = datePipe;
         this.task = {};
     }
@@ -848,7 +848,7 @@ var ViewtaskComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./viewtask.component.html */ "./src/app/viewtask/viewtask.component.html"),
             styles: [__webpack_require__(/*! ./viewtask.component.css */ "./src/app/viewtask/viewtask.component.css")]
         }),
-        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"], _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["DatePipe"]])
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["DatePipe"]])
     ], ViewtaskComponent);
     return ViewtaskComponent;
 }());

@@ -1,9 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ViewtaskComponent } from './viewtask.component';
-
-
-
+import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { DatePipe } from '@angular/common';
@@ -22,6 +20,7 @@ describe('ViewtaskComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
 	  imports: [
+	    FormsModule,
         RouterModule,
         MomentModule,
 		HttpClientModule,

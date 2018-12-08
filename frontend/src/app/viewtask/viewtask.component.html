@@ -1,4 +1,5 @@
-<div class="container" *ngIf="task != null">
+<div class="container">
+<div  *ngIf="task != null">
 <table>
       <tr>
 	    <td><h1>{{ task.taskName}}</h1></td>
@@ -10,13 +11,14 @@
 
 <dl class="list">
  <dt>Priority</dt>
- <dd>{{ task.priority }}</dd>
+ <dd><div *ngIf="task?.priority != null">{{ task.priority }}</div></dd>
  <dt>Parent</dt>
- <dd>{{ task.parentTaskName }}</dd>
+ <dd><div *ngIf="task?.parentTaskName != null">{{ task.parentTaskName }}</div></dd>
  <dt>Start Date</dt>
  <dd> <div *ngIf="task?.startDate != null"><time>{{ task.startDate | amDateFormat: 'YYYY-MM-DD' }}</time></div></dd>
  <dt>End Date</dt>
  <dd><div *ngIf="task?.endDate != null"><time>{{ task.endDate  | amDateFormat: 'YYYY-MM-DD' }}</time></div></dd>
 
 </dl>
+</div>
 </div>
